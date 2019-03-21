@@ -1,7 +1,7 @@
-defmodule Friends.Schema do
+defmodule FriendWeb.Schema do
   use Absinthe.Schema
 
-  import_types(Friend.Type)
+  import_types(FriendWeb.Type)
 
   query do
     import_fields(:friends)

@@ -13,11 +13,20 @@ defmodule FriendWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", FriendWeb do
-    pipe_through :browser
+  scope "/" do
+    pipe_through :api
 
-    get "/", PageController, :index
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: FriendWeb.Schema,
+      interface: :simple,
+      context: %{pubsub: FriendWeb.Endpoint}
   end
+
+  # scope "/", FriendWeb do
+  #   pipe_through :browser
+
+  #   get "/", PageController, :index
+  # end
 
   # Other scopes may use custom stacks.
   # scope "/api", FriendWeb do

@@ -1,9 +1,9 @@
-defmodule Friend.Type do
+defmodule FriendWeb.Type do
   use Absinthe.Schema.Notation
 
   object :friends do
     field(:friends, list_of(:friend)) do
-      resolve(&Friends.Resolver.list/3)
+      resolve(&FriendWeb.Resolver.list/3)
     end
   end
 
