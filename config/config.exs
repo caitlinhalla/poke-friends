@@ -28,6 +28,11 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+# Configure New Relic
+config :new_relic_agent,
+  app_name: System.get_env("NEW_RELIC_APP_NAME"),
+  license_key: System.get_env("NEW_RELIC_LICENSE_KEY")
+
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
