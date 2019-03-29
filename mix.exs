@@ -46,7 +46,8 @@ defmodule Friend.MixProject do
       {:absinthe_ecto, "~> 0.1.0"},
       {:absinthe_plug, "~> 1.4"},
       {:poison, "~> 3.0"},
-      {:new_relic_agent, "~> 1.0"}
+      {:new_relic_agent, "~> 1.0"},
+      {:new_relic_phoenix, "~> 0.1"}
     ]
   end
 

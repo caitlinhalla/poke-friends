@@ -1,5 +1,6 @@
 defmodule FriendWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :friend
+  use NewRelic.Phoenix.Transaction
 
   socket "/socket", FriendWeb.UserSocket,
     websocket: true,

@@ -21,7 +21,8 @@ config :friend, FriendWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "DYFTRHVi7xYxtbUbZClEs38QGREvY5r0cLwSiHrlDXULU8DiCmOcnF26dvDGieG6",
   render_errors: [view: FriendWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Friend.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Friend.PubSub, adapter: Phoenix.PubSub.PG2],
+  instrumenters: [NewRelic.Phoenix.Instrumenter]
 
 # Configures Elixir's Logger
 config :logger, :console,
